@@ -1,0 +1,6 @@
+include README.md
+recursive-include taggit_autosuggest_select2 *.py
+recursive-include taggit_autosuggest_select2/locale *
+recursive-include taggit_autosuggest_select2/static *
+recursive-include taggit_autosuggest_select2/templates *
+recursive-exclude * *.pyc
