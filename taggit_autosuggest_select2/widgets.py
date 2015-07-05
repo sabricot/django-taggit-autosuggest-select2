@@ -10,14 +10,14 @@ from django.utils.translation import ugettext_lazy as _
 from taggit_autosuggest_select2.utils import edit_string_for_tags
 
 
-MAX_SUGGESTIONS = getattr(settings, 'TAGGIT_AUTOSUGGEST_SELECT2_MAX_SUGGESTIONS', 20)
+MAX_SUGGESTIONS = getattr(settings, 'TAGGIT_AUTOSUGGEST_SELECT2_MAX_SUGGESTIONS', 25)
 
 
 class TagAutoSuggest(forms.TextInput):
     input_type = 'text'
 
     def render(self, name, value, attrs=None):
-        if value is not None and not isinstance(value, basestring):
+        if value is not None and not isinstance(value, str):
             tags = [o.tag for o in value.select_related("tag")]
             value = edit_string_for_tags(tags)
 
